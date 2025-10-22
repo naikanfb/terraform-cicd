@@ -1,6 +1,6 @@
 terraform {
   required_version = ">= 1.0"
-  
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -10,10 +10,10 @@ terraform {
 }
 
 provider "aws" {
-  access_key                  = "test"
-  secret_key                  = "test"
-  region                      = "us-east-1"
-  
+  access_key = "test"
+  secret_key = "test"
+  region     = "us-east-1"
+
   s3_use_path_style           = true
   skip_credentials_validation = true
   skip_metadata_api_check     = true
@@ -28,10 +28,10 @@ provider "aws" {
 # Usar el módulo para crear bucket de desarrollo
 module "bucket_desarrollo" {
   source = "./modules/s3-bucket"
-  
+
   bucket_name = "modulo-dev-bucket"
   environment = "Development"
-  
+
   tags = {
     Project = "Terraform Learning"
     Owner   = "ASIR Student"
@@ -41,14 +41,14 @@ module "bucket_desarrollo" {
 # Usar el módulo para crear bucket de producción
 module "bucket_produccion" {
   source = "./modules/s3-bucket"
-  
+
   bucket_name = "modulo-prod-bucket"
   environment = "Production"
-  
+
   tags = {
-    Project   = "Terraform Learning"
-    Owner     = "ASIR Student"
-    Critical  = "true"
+    Project  = "Terraform Learning"
+    Owner    = "ASIR Student"
+    Critical = "true"
   }
 }
 
