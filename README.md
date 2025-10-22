@@ -1,6 +1,6 @@
 # Terraform CI/CD con LocalStack
 
-![Terraform Validate](https://github.com/TU_USUARIO/terraform-cicd/workflows/Terraform%20Validate/badge.svg)
+[![Terraform Validate](https://github.com/naikanfb/terraform-cicd/actions/workflows/validate.yml/badge.svg)](https://github.com/naikanfb/terraform-cicd/actions/workflows/validate.yml)
 
 ## Descripción
 
