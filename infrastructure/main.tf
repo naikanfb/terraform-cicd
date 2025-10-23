@@ -60,3 +60,5 @@ output "bucket_dev_name" {
 output "bucket_prod_name" {
   value = module.bucket_produccion.bucket_name
 }
+
+# Outputs
