@@ -62,3 +62,24 @@ output "bucket_prod_name" {
 }
 
 # Outputs
+
+resource "aws_s3_bucket" "logs" {
+  bucket = "terraform-cicd-logs"
+
+  tags = {
+    Name        = "Logs Bucket"
+    Environment = "CI/CD"
+    ManagedBy   = "Terraform"
+    Purpose     = "Logging"
+  }
+}
+
+output "main_bucket_name" {
+  value       = aws_s3_bucket.demo.bucket
+  description = "Nombre del bucket principal"
+}
+
+output "logs_bucket_name" {
+  value       = aws_s3_bucket.logs.bucket
+  description = "Nombre del bucket de logs"
+}
